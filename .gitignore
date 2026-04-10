@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2026 SecPal
+# SPDX-License-Identifier: CC0-1.0
+
+# Dependencies
+node_modules/
+
+# Next.js build artifacts
+.next/
+out/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+*.key
+*.pem
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Preflight overrides (local only)
+.preflight-allow-large-pr
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Tool caches
+.eslintcache
+.prettiercache
+*.tsbuildinfo
+node_modules/.cache/

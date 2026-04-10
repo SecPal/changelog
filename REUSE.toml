@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2026 SecPal
+# SPDX-License-Identifier: CC0-1.0
+
+version = 1
+
+# SecPal source code (adapted from Tailwind Plus Commit template)
+[[annotations]]
+path = "src/**"
+SPDX-FileCopyrightText = ["2026 SecPal", "Tailwind Labs Inc."]
+SPDX-License-Identifier = "AGPL-3.0-or-later AND LicenseRef-TailwindPlus"
+
+# MDX plugins and config files adapted from Tailwind Plus Commit template
+[[annotations]]
+path = ["mdx/**", "mdx-components.tsx"]
+SPDX-FileCopyrightText = ["2026 SecPal", "Tailwind Labs Inc."]
+SPDX-License-Identifier = "AGPL-3.0-or-later AND LicenseRef-TailwindPlus"
+
+[[annotations]]
+path = [
+  "next.config.mjs",
+  "tsconfig.json",
+  "postcss.config.js",
+  "prettier.config.js",
+  ".eslintrc.json",
+  ".prettierrc.json",
+  ".editorconfig",
+  ".gitignore",
+  ".gitattributes",
+  ".nvmrc",
+  ".yamllint.yml",
+  ".markdownlint.json",
+  ".markdownlint-cli2.yaml",
+  ".env.example",
+  "package.json",
+  "package-lock.json",
+  "next-env.d.ts",
+  "CODEOWNERS",
+]
+SPDX-FileCopyrightText = "2026 SecPal"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = ["README.md", "CHANGELOG.md", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md", ".github/**"]
+SPDX-FileCopyrightText = "2026 SecPal"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "SECURITY.md"
+SPDX-FileCopyrightText = "2026 SecPal"
+SPDX-License-Identifier = "CC0-1.0"

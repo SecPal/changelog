@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: 2026 SecPal
+# SPDX-License-Identifier: CC0-1.0
+
+name: Quality Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  reuse:
+    name: Check REUSE Compliance
+    uses: SecPal/.github/.github/workflows/reusable-reuse.yml@main
+
+  license-compatibility:
+    name: Check License Compatibility
+    uses: SecPal/.github/.github/workflows/reusable-license-compatibility.yml@main
+
+  prettier:
+    name: Formatting Check
+    uses: SecPal/.github/.github/workflows/reusable-prettier.yml@main
+
+  markdown-lint:
+    name: Markdown Lint
+    uses: SecPal/.github/.github/workflows/reusable-markdown-lint.yml@main
+
+  eslint:
+    name: ESLint
+    uses: SecPal/.github/.github/workflows/reusable-node-lint.yml@main
+    with:
+      node-version: "22"
+
+  build:
+    name: Next.js Build
+    uses: SecPal/.github/.github/workflows/reusable-node-build.yml@main
+    with:
+      node-version: "22"
+      build-command: "npm run build"
