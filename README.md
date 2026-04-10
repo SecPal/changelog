@@ -46,9 +46,15 @@ The site is available at <http://localhost:3000>.
 ## Building for production
 
 ```bash
-npm run build
-# Standalone output is in .next/standalone/
+NEXT_PUBLIC_SITE_URL=https://changelog.secpal.app npm run build
+# Static output is in out/
+# feed.xml is generated automatically as part of the build
 ```
+
+## Deployment
+
+nginx serves `out/` as static files — no Node.js server process is needed.
+Run `npm run build` and reload nginx after each deployment.
 
 ## License
 

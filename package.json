@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build --webpack",
-    "start": "next start",
+    "build": "next build --webpack && node scripts/generate-feed.mjs",
     "lint": "next lint",
     "format": "prettier --write --cache '**/*.{md,yml,yaml,json,ts,tsx,js,jsx}'",
     "format:check": "prettier --check '**/*.{md,yml,yaml,json,ts,tsx,js,jsx}'"
