@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'SecPal Changelog',
   description:
-    'Stay up to date with every new feature, improvement, and Android release from SecPal — security-focused mobile device management.',
+    'Stay up to date with every new feature, improvement, and Android release from SecPal — operations software for German private security services.',
   alternates: {
     types: {
       'application/rss+xml': '/feed.xml',

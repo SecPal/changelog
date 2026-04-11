@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC0-1.0
 
 # SecPal Changelog
 
-Public changelog for SecPal — security-focused mobile device management.
+Public changelog for SecPal — operations software for German private security services.
 
 Live at [changelog.secpal.app](https://changelog.secpal.app).
 
