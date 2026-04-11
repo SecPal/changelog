@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack && node scripts/generate-feed.mjs",
-    "lint": "next lint",
+    "check": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "preflight": "bash scripts/preflight.sh",
     "format": "prettier --write --cache '**/*.{md,yml,yaml,json,ts,tsx,js,jsx}'",
     "format:check": "prettier --check '**/*.{md,yml,yaml,json,ts,tsx,js,jsx}'"
   },

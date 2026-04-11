@@ -10,6 +10,9 @@ import { Providers } from '@/app/providers'
 
 import '@/styles/tailwind.css'
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://changelog.secpal.app'
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -24,12 +27,13 @@ const monaSans = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'SecPal Changelog',
   description:
     'Stay up to date with every new feature, improvement, and Android release from SecPal — security-focused mobile device management.',
   alternates: {
     types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
+      'application/rss+xml': '/feed.xml',
     },
   },
 }

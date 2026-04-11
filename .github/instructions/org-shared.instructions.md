@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 name: secpal.app Runtime Overlay
 description: Reinforces strict SecPal governance for all files in this repo.
-applyTo: "**"
+applyTo: '**'
 ---
 
 # secpal.app Runtime Overlay

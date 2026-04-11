@@ -4,12 +4,7 @@
 
 export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg
-      viewBox="0 0 120 32"
-      fill="none"
-      aria-hidden="true"
-      {...props}
-    >
+    <svg viewBox="0 0 120 32" fill="none" aria-hidden="true" {...props}>
       <title>SecPal</title>
       <text
         x="0"
