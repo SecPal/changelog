@@ -14,6 +14,7 @@ const buildIdInputs = [
   'mdx-components.tsx',
   'next.config.mjs',
   'package.json',
+  'package-lock.json',
 ]
 
 function collectBuildIdFiles(entryPath) {
