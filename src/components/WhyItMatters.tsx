@@ -12,7 +12,7 @@
  */
 export function WhyItMatters({ children }: { children: React.ReactNode }) {
   return (
-    <div className="border-l-2 border-sky-600/30 pl-4 text-sm/6 text-gray-500 italic dark:border-sky-500/25 dark:text-gray-400">
+    <div className="border-l-2 border-sky-600/40 py-1 pl-5 text-sm/6 text-gray-500 italic dark:border-sky-500/30 dark:text-gray-400">
       <span className="font-semibold text-gray-400 not-italic dark:text-gray-500">
         Why it matters:{' '}
       </span>
