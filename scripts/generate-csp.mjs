@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT
 import assert from 'assert'
 import * as crypto from 'crypto'
+import * as cheerio from 'cheerio'
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -57,20 +58,20 @@ function walkHtmlFiles(directory) {
 
 function collectInlineScriptHashes(htmlFilePath) {
   const html = fs.readFileSync(htmlFilePath, 'utf8')
+  const $ = cheerio.load(html, { decodeEntities: false })
   const hashes = []
 
-  for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
-    const attributes = match[1]
-    const body = match[2]
+  $('script:not([src])').each((_, element) => {
+    const body = $(element).html() ?? ''
 
-    if (/\bsrc\s*=/.test(attributes) || body.length === 0) {
-      continue
+    if (body.length === 0) {
+      return
     }
 
     hashes.push(
       `sha256-${crypto.createHash('sha256').update(body).digest('base64')}`,
     )
-  }
+  })
 
   return hashes
 }
