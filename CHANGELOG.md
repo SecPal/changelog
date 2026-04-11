@@ -13,11 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
-
-- sharpened hero entry copy in `src/app/page.mdx`: headline → "Building SecPal in public", intro split into two shorter paragraphs with "We build in the open.", list simplified to bare app identifiers, section title → "What's in progress", list items trimmed of trailing descriptors
-
 ### Added
+
+- `Label` and `Labels` components (`src/components/Label.tsx`): lightweight per-entry taxonomy badges with kinds `added | improved | fixed | changed | android | api | web | auth | security | breaking`; neutrals share one style, `security` gets an amber tint, `breaking` a red tint — registered globally in `mdx.tsx` so MDX files need no explicit import
+- `WhyItMatters` component (`src/components/WhyItMatters.tsx`): optional callout line for significant entries; renders as a subtle left-border paragraph with "Why it matters:" prefix — registered globally in `mdx.tsx`
+- demonstrative usage of both components in `src/app/page.mdx`: scope labels on the hero entry, `WhyItMatters` closing the in-progress section
 
 - initial site setup based on Tailwind Plus Commit template (commit-ts) with SecPal branding
 - REUSE/SPDX license compliance for all source files
@@ -27,6 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `scripts/generate-csp.mjs`: build-time CSP generator that derives the required `script-src` hashes from exported HTML and produces a deployable nginx snippet
 
 ### Changed
+
+- sharpened hero entry copy in `src/app/page.mdx`: headline → "Building SecPal in public", intro split into two shorter paragraphs with "We build in the open.", list simplified to bare app identifiers, section title → "What's in progress", list items trimmed of trailing descriptors
 
 - narrowed the Tailwind Plus REUSE attribution so only genuinely Commit-template-derived changelog source files carry `LicenseRef-TailwindPlus`, while original SecPal source files now declare plain AGPL directly in their own SPDX headers
 - replaced the generic changelog brand glyphs with the canonical SecPal logo in the header, reused the canonical `SecPal – A guard's best friend` tagline in the footer, kept the dark brand asset for the always-dark intro sidebar in light mode, switched the `secpal.app` link treatment to the canonical monochrome SecPal logo derived from the frontend brand assets, and added light/dark theme-aware browser icons
