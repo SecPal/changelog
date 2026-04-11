@@ -20,24 +20,22 @@ interface LabelProps {
   children: React.ReactNode
 }
 
+const NEUTRAL_KIND_CLASS =
+  'text-gray-500 border-gray-300 dark:text-gray-400 dark:border-gray-600'
+
 const KIND_CLASSES: Record<LabelKind, string> = {
-  added:
-    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  improved:
-    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  fixed:
-    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  changed:
-    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  android:
-    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  api: 'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  web: 'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  auth: 'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
+  added: NEUTRAL_KIND_CLASS,
+  improved: NEUTRAL_KIND_CLASS,
+  fixed: NEUTRAL_KIND_CLASS,
+  changed: NEUTRAL_KIND_CLASS,
+  android: NEUTRAL_KIND_CLASS,
+  api: NEUTRAL_KIND_CLASS,
+  web: NEUTRAL_KIND_CLASS,
+  auth: NEUTRAL_KIND_CLASS,
   security:
     'text-amber-700/80 border-amber-400/40 dark:text-amber-400/70 dark:border-amber-600/40',
   breaking:
-    'text-red-700/80   border-red-300/40   dark:text-red-400/70   dark:border-red-700/40',
+    'text-red-700/80 border-red-300/40 dark:text-red-400/70 dark:border-red-700/40',
 }
 
 /**
