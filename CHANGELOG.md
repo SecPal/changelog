@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- refreshed `package-lock.json` with `npm audit fix --package-lock-only`, clearing the remaining transitive `npm audit` findings and aligning the lockfile package name with `secpal-changelog`
 - switched Next.js build output from `standalone` to `export` — static files in `out/`, no Node.js server process required
 - replaced `src/app/feed.xml/route.ts` with `scripts/generate-feed.mjs` (post-build static feed generation)
 - `build` script now runs `next build --webpack && node scripts/generate-feed.mjs && node scripts/generate-csp.mjs`
