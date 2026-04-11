@@ -49,6 +49,7 @@ The site is available at <http://localhost:3000>.
 npm run build
 # Static output is in out/
 # feed.xml is generated automatically as part of the build
+# CSP snippet is generated at out/nginx/changelog-csp.conf
 ```
 
 To override the canonical site URL for preview or staging builds:
@@ -60,7 +61,8 @@ NEXT_PUBLIC_SITE_URL=https://preview.secpal.dev npm run build
 ## Deployment
 
 nginx serves `out/` as static files — no Node.js server process is needed.
-Run `npm run build` and reload nginx after each deployment.
+Run `npm run build` and, if the exported HTML changed, update the tracked nginx snippet with `npm run csp:update` before deploying.
+Deploy `nginx/changelog-csp.conf` into the live vhost in place of the inline `set $secpal_csp ...` definition, then reload nginx.
 
 ## Local validation
 
