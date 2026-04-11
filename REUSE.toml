@@ -3,12 +3,6 @@
 
 version = 1
 
-# SecPal source code (adapted from Tailwind Plus Commit template)
-[[annotations]]
-path = "src/**"
-SPDX-FileCopyrightText = ["2026 SecPal", "Tailwind Labs Inc."]
-SPDX-License-Identifier = "AGPL-3.0-or-later AND LicenseRef-TailwindPlus"
-
 # MDX plugins and config files adapted from Tailwind Plus Commit template
 [[annotations]]
 path = ["mdx/**", "mdx-components.tsx"]
