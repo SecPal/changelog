@@ -25,7 +25,7 @@ export function LogoMark({
             srcSet="/logo-dark-64.png"
             media="(prefers-color-scheme: dark)"
           />
-          {/* eslint-disable-next-line @next/next/no-img-element -- raw <img> is required as the <picture> fallback; next/image cannot be nested inside <picture> */}
+
           <img
             src="/logo-light-64.png"
             alt=""
