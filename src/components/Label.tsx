@@ -21,16 +21,23 @@ interface LabelProps {
 }
 
 const KIND_CLASSES: Record<LabelKind, string> = {
-  added:    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  improved: 'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  fixed:    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  changed:  'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  android:  'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  api:      'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  web:      'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  auth:     'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
-  security: 'text-amber-700/80 border-amber-400/40 dark:text-amber-400/70 dark:border-amber-600/40',
-  breaking: 'text-red-700/80   border-red-300/40   dark:text-red-400/70   dark:border-red-700/40',
+  added:
+    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
+  improved:
+    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
+  fixed:
+    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
+  changed:
+    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
+  android:
+    'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
+  api: 'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
+  web: 'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
+  auth: 'text-gray-500 border-gray-300   dark:text-gray-400 dark:border-gray-600',
+  security:
+    'text-amber-700/80 border-amber-400/40 dark:text-amber-400/70 dark:border-amber-600/40',
+  breaking:
+    'text-red-700/80   border-red-300/40   dark:text-red-400/70   dark:border-red-700/40',
 }
 
 /**
@@ -49,7 +56,7 @@ export function Label({ kind = 'added', children }: LabelProps) {
   return (
     <span
       className={clsx(
-        'inline-flex items-center rounded border px-1.5 py-px text-2xs font-semibold uppercase tracking-wider',
+        'inline-flex items-center rounded border px-1.5 py-px text-2xs font-semibold tracking-wider uppercase',
         KIND_CLASSES[kind],
       )}
     >
