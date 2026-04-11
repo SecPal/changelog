@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - local repository guardrails: `scripts/check-conflict-markers.sh`, `scripts/check-domains.sh`, and `scripts/preflight.sh`
 - nginx site config at `/etc/nginx/sites-available/changelog.secpal.app` serving static files from `out/`
 - TLS certificate for `changelog.secpal.app` via certbot
+- nginx reverse proxy and systemd service for `changelog.secpal.app`
 
 ### Changed
 
@@ -30,4 +31,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `build` script now runs `next build --webpack && node scripts/generate-feed.mjs`
 - linting now uses ESLint 9 flat config with a dedicated TypeScript check in CI and local preflight
 - feed and metadata generation now default safely to `https://changelog.secpal.app` when `NEXT_PUBLIC_SITE_URL` is unset
-- nginx reverse proxy and systemd service for `changelog.secpal.app`
