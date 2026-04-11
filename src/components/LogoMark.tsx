@@ -1,6 +1,5 @@
 // SPDX-FileCopyrightText: 2026 SecPal
 // SPDX-License-Identifier: AGPL-3.0-or-later
-/* eslint-disable @next/next/no-img-element */
 import clsx from 'clsx'
 
 type LogoTheme = 'auto' | 'dark' | 'light'
@@ -18,29 +17,35 @@ export function LogoMark({
         className,
       )}
     >
-      {theme !== 'dark' ? (
+      {theme === 'auto' ? (
+        // <picture> with prefers-color-scheme ensures only the matching asset is
+        // fetched — the browser never downloads the inactive source.
+        <picture>
+          <source
+            srcSet="/logo-dark-64.png"
+            media="(prefers-color-scheme: dark)"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element -- raw <img> is required as the <picture> fallback; next/image cannot be nested inside <picture> */}
+          <img
+            src="/logo-light-64.png"
+            alt=""
+            aria-hidden="true"
+            className="h-full w-full object-contain"
+            width={64}
+            height={59}
+          />
+        </picture>
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element -- static PNG logo served unoptimised; images.unoptimized=true in next.config.mjs
         <img
-          src="/logo-light-64.png"
+          src={theme === 'dark' ? '/logo-dark-64.png' : '/logo-light-64.png'}
           alt=""
           aria-hidden="true"
-          className={clsx('h-full w-full', theme === 'auto' && 'dark:hidden')}
-          width="64"
-          height="64"
+          className="h-full w-full object-contain"
+          width={64}
+          height={59}
         />
-      ) : null}
-      {theme !== 'light' ? (
-        <img
-          src="/logo-dark-64.png"
-          alt=""
-          aria-hidden="true"
-          className={clsx(
-            'h-full w-full',
-            theme === 'auto' && 'hidden dark:block',
-          )}
-          width="64"
-          height="64"
-        />
-      ) : null}
+      )}
     </span>
   )
 }
