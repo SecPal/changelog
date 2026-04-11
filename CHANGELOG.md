@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- sharpened hero entry copy in `src/app/page.mdx`: headline → "Building SecPal in public", intro split into two shorter paragraphs with "We build in the open.", list simplified to bare app identifiers, section title → "What's in progress", list items trimmed of trailing descriptors
+
 ### Added
 
 - initial site setup based on Tailwind Plus Commit template (commit-ts) with SecPal branding
