@@ -19,6 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `Label` and `Labels` components (`src/components/Label.tsx`): lightweight per-entry taxonomy badges with kinds `added | improved | fixed | changed | android | api | web | auth | security | breaking`; neutrals share one style, `security` gets an amber tint, `breaking` a red tint — registered globally in `mdx.tsx` so MDX files need no explicit import
+- `WhyItMatters` component (`src/components/WhyItMatters.tsx`): optional callout line for significant entries; renders as a subtle left-border paragraph with "Why it matters:" prefix — registered globally in `mdx.tsx`
+- demonstrative usage of both components in `src/app/page.mdx`: scope labels on the hero entry, `WhyItMatters` closing the in-progress section
+
 - initial site setup based on Tailwind Plus Commit template (commit-ts) with SecPal branding
 - REUSE/SPDX license compliance for all source files
 - full SecPal governance: branch protections, Copilot instructions, CI/CD workflows, dependabot, CODEOWNERS

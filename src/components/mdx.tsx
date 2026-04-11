@@ -11,6 +11,10 @@ import clsx from 'clsx'
 
 import { FormattedDate } from '@/components/FormattedDate'
 
+// Globally register taxonomy helpers so MDX files need no explicit imports.
+export { Label, Labels } from '@/components/Label'
+export { WhyItMatters } from '@/components/WhyItMatters'
+
 export const a = Link
 
 type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string }
