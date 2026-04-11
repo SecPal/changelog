@@ -7,7 +7,7 @@
 import { useSyncExternalStore } from 'react'
 import { useTheme } from 'next-themes'
 
-const emptySubscribe = () => () => { }
+const emptySubscribe = () => () => {}
 
 function ThemeIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
