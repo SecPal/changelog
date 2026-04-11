@@ -20,11 +20,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - full SecPal governance: branch protections, Copilot instructions, CI/CD workflows, dependabot, CODEOWNERS
 - `scripts/generate-feed.mjs`: post-build script that reads `out/index.html` and generates `out/feed.xml`
 - local repository guardrails: `scripts/check-conflict-markers.sh`, `scripts/check-domains.sh`, and `scripts/preflight.sh`
+- `scripts/generate-csp.mjs`: build-time CSP generator that derives the required `script-src` hashes from exported HTML and produces a deployable nginx snippet
 
 ### Changed
 
 - switched Next.js build output from `standalone` to `export` — static files in `out/`, no Node.js server process required
 - replaced `src/app/feed.xml/route.ts` with `scripts/generate-feed.mjs` (post-build static feed generation)
-- `build` script now runs `next build --webpack && node scripts/generate-feed.mjs`
+- `build` script now runs `next build --webpack && node scripts/generate-feed.mjs && node scripts/generate-csp.mjs`
+- Next.js now uses a deterministic build ID derived from the tracked site inputs so CSP hash snapshots stay stable across identical builds
 - linting now uses ESLint 9 flat config with a dedicated TypeScript check in CI and local preflight
 - feed and metadata generation now default safely to `https://changelog.secpal.app` when `NEXT_PUBLIC_SITE_URL` is unset
+- local preflight now fails when the tracked nginx CSP snippet no longer matches the current exported HTML

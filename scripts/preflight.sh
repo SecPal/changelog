@@ -41,4 +41,7 @@ npm run lint
 echo 'Running production build...'
 npm run build
 
+echo 'Checking tracked CSP snippet...'
+npm run csp:check
+
 echo 'All preflight checks passed'

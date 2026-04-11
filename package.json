@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build --webpack && node scripts/generate-feed.mjs",
+    "build": "next build --webpack && node scripts/generate-feed.mjs && node scripts/generate-csp.mjs",
     "check": "tsc --noEmit",
+    "csp:check": "node scripts/generate-csp.mjs --check",
+    "csp:update": "node scripts/generate-csp.mjs --write",
     "lint": "eslint . --max-warnings=0",
     "preflight": "bash scripts/preflight.sh",
     "format": "prettier --write --cache '**/*.{md,yml,yaml,json,ts,tsx,js,jsx}'",
