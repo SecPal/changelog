@@ -4,41 +4,41 @@
 # Dependabot configuration for SecPal Changelog (Next.js)
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "daily"
-      time: "04:00"
-      timezone: "Europe/Berlin"
-    versioning-strategy: "increase"
+      interval: 'daily'
+      time: '04:00'
+      timezone: 'Europe/Berlin'
+    versioning-strategy: 'increase'
     commit-message:
-      prefix: "chore"
-      include: "scope"
+      prefix: 'chore'
+      include: 'scope'
     open-pull-requests-limit: 10
     labels:
-      - "dependencies"
-      - "npm"
-      - "dependabot"
-    rebase-strategy: "auto"
-    target-branch: "main"
+      - 'dependencies'
+      - 'npm'
+      - 'dependabot'
+    rebase-strategy: 'auto'
+    target-branch: 'main'
     pull-request-branch-name:
-      separator: "-"
+      separator: '-'
 
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "daily"
-      time: "04:00"
-      timezone: "Europe/Berlin"
+      interval: 'daily'
+      time: '04:00'
+      timezone: 'Europe/Berlin'
     commit-message:
-      prefix: "chore"
-      include: "scope"
+      prefix: 'chore'
+      include: 'scope'
     open-pull-requests-limit: 10
     labels:
-      - "dependencies"
-      - "github-actions"
-      - "dependabot"
-    rebase-strategy: "auto"
-    target-branch: "main"
+      - 'dependencies'
+      - 'github-actions'
+      - 'dependabot'
+    rebase-strategy: 'auto'
+    target-branch: 'main'
     pull-request-branch-name:
-      separator: "-"
+      separator: '-'

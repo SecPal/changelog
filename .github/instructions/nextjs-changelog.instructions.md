@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 name: Next.js Changelog Rules
 description: Applies Next.js and Tailwind CSS rules to source files in the changelog repo.
-applyTo: "src/**/*.ts,src/**/*.tsx,next.config.mjs,postcss.config.js"
+applyTo: 'src/**/*.ts,src/**/*.tsx,next.config.mjs,postcss.config.js'
 ---
 
 # Next.js Changelog Rules

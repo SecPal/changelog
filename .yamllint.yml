@@ -26,5 +26,5 @@ rules:
 
   # Truthy values are common in GitHub Actions
   truthy:
-    allowed-values: ["true", "false", "on", "off"]
+    allowed-values: ['true', 'false', 'on', 'off']
     check-keys: false

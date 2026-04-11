@@ -34,11 +34,18 @@ jobs:
     name: ESLint
     uses: SecPal/.github/.github/workflows/reusable-node-lint.yml@main
     with:
-      node-version: "22"
+      node-version: '22'
+
+  typecheck:
+    name: TypeScript Check
+    uses: SecPal/.github/.github/workflows/reusable-node-build.yml@main
+    with:
+      node-version: '22'
+      build-command: 'npm run check'
 
   build:
     name: Next.js Build
     uses: SecPal/.github/.github/workflows/reusable-node-build.yml@main
     with:
-      node-version: "22"
-      build-command: "npm run build"
+      node-version: '22'
+      build-command: 'npm run build'

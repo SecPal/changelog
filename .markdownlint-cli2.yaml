@@ -5,4 +5,4 @@
 # Excludes node_modules directory from linting
 
 ignores:
-  - "node_modules/**"
+  - 'node_modules/**'

@@ -47,7 +47,25 @@ The site is available at <http://localhost:3000>.
 
 ```bash
 npm run build
-# Standalone output is in .next/standalone/
+# Static output is in out/
+# feed.xml is generated automatically as part of the build
+```
+
+To override the canonical site URL for preview or staging builds:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://preview.secpal.dev npm run build
+```
+
+## Deployment
+
+nginx serves `out/` as static files — no Node.js server process is needed.
+Run `npm run build` and reload nginx after each deployment.
+
+## Local validation
+
+```bash
+npm run preflight
 ```
 
 ## License
