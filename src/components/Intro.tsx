@@ -47,8 +47,7 @@ export function Intro() {
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
         Follow every feature, improvement, and Android release as we build
-        SecPal — security-focused mobile device management for modern
-        organisations.
+        SecPal — operations software for German private security services.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconLink
