@@ -20,9 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - full SecPal governance: branch protections, Copilot instructions, CI/CD workflows, dependabot, CODEOWNERS
 - `scripts/generate-feed.mjs`: post-build script that reads `out/index.html` and generates `out/feed.xml`
 - local repository guardrails: `scripts/check-conflict-markers.sh`, `scripts/check-domains.sh`, and `scripts/preflight.sh`
-- nginx site config at `/etc/nginx/sites-available/changelog.secpal.app` serving static files from `out/`
-- TLS certificate for `changelog.secpal.app` via certbot
-- nginx reverse proxy and systemd service for `changelog.secpal.app`
 
 ### Changed
 

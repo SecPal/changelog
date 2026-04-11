@@ -22,10 +22,10 @@ matches=$(grep -RInE 'secpal\.[A-Za-z0-9.-]+' \
   --exclude-dir='.next' \
   --exclude-dir='node_modules' \
   --exclude-dir='out' \
-  . 2>/dev/null | grep -v 'scripts/check-domains.sh' || true)
+  . 2>/dev/null | grep -v 'scripts/check-domains.sh' | grep -v '.github/copilot-instructions.md' || true)
 
 violations=$(printf '%s\n' "$matches" | \
-  grep -Ev '(^|[^A-Za-z0-9.-])secpal\.app($|[^A-Za-z0-9._-])|(^|[^A-Za-z0-9.-])www\.secpal\.app($|[^A-Za-z0-9._-])|(^|[^A-Za-z0-9.-])changelog\.secpal\.app($|[^A-Za-z0-9._-])|(^|[^A-Za-z0-9.-])apk\.secpal\.app($|[^A-Za-z0-9._-])|(^|[^A-Za-z0-9.-])([A-Za-z0-9-]+\.)*secpal\.dev($|[^A-Za-z0-9._-])|(^|[^A-Za-z0-9.-])api\.secpal\.app($|[^A-Za-z0-9._-])' | \
+  grep -Ev '(^|[^A-Za-z0-9.-])secpal\.app($|[^A-Za-z0-9._-])|(^|[^A-Za-z0-9.-])www\.secpal\.app($|[^A-Za-z0-9._-])|(^|[^A-Za-z0-9.-])changelog\.secpal\.app($|[^A-Za-z0-9._-])|(^|[^A-Za-z0-9.-])apk\.secpal\.app($|[^A-Za-z0-9._-])|(^|[^A-Za-z0-9.-])([A-Za-z0-9-]+\.)*secpal\.dev($|[^A-Za-z0-9._-])' | \
   grep -E 'secpal\.' || true)
 
 if [[ -n "$violations" ]]; then

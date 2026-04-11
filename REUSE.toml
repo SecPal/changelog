@@ -42,9 +42,15 @@ SPDX-FileCopyrightText = "2026 SecPal"
 SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
-path = "scripts/**"
+path = "scripts/*.sh"
 SPDX-FileCopyrightText = "2026 SecPal Contributors"
 SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "scripts/generate-feed.mjs"
+SPDX-FileCopyrightText = "2026 SecPal"
+SPDX-FileCopyrightText = "Tailwind Labs Inc."
+SPDX-License-Identifier = "AGPL-3.0-or-later AND LicenseRef-TailwindPlus"
 
 [[annotations]]
 path = ["README.md", "CHANGELOG.md", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md", ".github/**"]

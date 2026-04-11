@@ -24,10 +24,6 @@ while IFS= read -r -d '' file; do
 
   checked_files=$((checked_files + 1))
 
-  if [[ "$file" =~ \.md$ ]]; then
-    continue
-  fi
-
   for marker in "${MARKERS[@]}"; do
     if grep -n "^${marker}" "$file" >/dev/null 2>&1; then
       if [ "$conflicts_found" -eq 0 ]; then

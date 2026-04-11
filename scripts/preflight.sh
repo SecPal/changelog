@@ -15,8 +15,11 @@ for protected_branch in main master production; do
   fi
 done
 
+echo 'Installing dependencies...'
+npm ci --silent
+
 echo 'Running format checks...'
-npx --yes prettier --check --cache '**/*.{md,yml,yaml,json,ts,tsx,js,jsx,mjs}'
+npm run format:check
 
 if command -v reuse >/dev/null 2>&1; then
   echo 'Running REUSE validation...'
@@ -28,9 +31,6 @@ bash scripts/check-domains.sh
 
 echo 'Running conflict marker check...'
 bash scripts/check-conflict-markers.sh
-
-echo 'Installing dependencies...'
-npm ci --silent
 
 echo 'Running TypeScript check...'
 npm run check
