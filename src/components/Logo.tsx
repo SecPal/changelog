@@ -1,22 +1,23 @@
 // SPDX-FileCopyrightText: 2026 SecPal
 // SPDX-FileCopyrightText: Tailwind Labs Inc.
 // SPDX-License-Identifier: AGPL-3.0-or-later AND LicenseRef-TailwindPlus
+import clsx from 'clsx'
 
-export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
+import { LogoMark } from '@/components/LogoMark'
+
+export function Logo({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<'span'>) {
   return (
-    <svg viewBox="0 0 120 32" fill="none" aria-hidden="true" {...props}>
-      <title>SecPal</title>
-      <text
-        x="0"
-        y="24"
-        fontFamily="var(--font-mona-sans), ui-sans-serif, system-ui, sans-serif"
-        fontWeight="600"
-        fontSize="26"
-        fill="currentColor"
-        className="fill-white"
-      >
+    <span
+      {...props}
+      className={clsx('inline-flex items-center gap-3 text-white', className)}
+    >
+      <LogoMark className="h-8 w-8" theme="dark" />
+      <span className="font-display text-[1.625rem]/none font-semibold tracking-tight text-white">
         SecPal
-      </text>
-    </svg>
+      </span>
+    </span>
   )
 }

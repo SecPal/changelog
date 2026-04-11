@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 import { IconLink } from '@/components/IconLink'
 import { Logo } from '@/components/Logo'
+import { LogoMarkMonochromeIcon } from '@/components/LogoMark'
 
 function GitHubIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -26,20 +27,12 @@ function FeedIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function GlobeIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor" {...props}>
-      <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1ZM2.046 7.5H4.07a13.697 13.697 0 0 1 .198-2.302A7.03 7.03 0 0 1 2.046 7.5ZM5.577 7.5H8V2.077A6.015 6.015 0 0 0 5.82 4.16 12.218 12.218 0 0 0 5.577 7.5ZM9 2.077V7.5h2.423a12.218 12.218 0 0 0-.243-3.34A6.015 6.015 0 0 0 9 2.077ZM11.93 7.5h2.023a7.03 7.03 0 0 0-2.22-2.802A13.698 13.698 0 0 1 11.93 7.5ZM13.953 8.5H11.93a13.698 13.698 0 0 1-.197 2.302A7.03 7.03 0 0 1 13.953 8.5ZM10.423 8.5H8v5.423a6.015 6.015 0 0 0 2.757-2.083 12.218 12.218 0 0 0 .243-3.34 ZM7 13.923V8.5H4.577a12.218 12.218 0 0 0 .2433.34A6.015 6.015 0 0 0 7 13.923ZM4.07 8.5H2.046a7.03 7.03 0 0 0 2.222 2.802A13.698 13.698 0 0 1 4.069 8.5Z" />
-    </svg>
-  )
-}
-
 export function Intro() {
   return (
     <>
       <div>
         <Link href="/">
-          <Logo className="inline-block h-8 w-auto" />
+          <Logo />
         </Link>
       </div>
       <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
@@ -52,7 +45,7 @@ export function Intro() {
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconLink
           href="https://secpal.app"
-          icon={GlobeIcon}
+          icon={LogoMarkMonochromeIcon}
           className="flex-none"
         >
           secpal.app
@@ -74,11 +67,13 @@ export function Intro() {
 
 export function IntroFooter() {
   return (
-    <p className="flex items-baseline gap-x-2 text-[0.8125rem]/6 text-gray-500">
-      Built by{' '}
-      <IconLink href="https://secpal.app" icon={GlobeIcon} compact>
-        SecPal
-      </IconLink>
-    </p>
+    <Link
+      href="https://secpal.app"
+      className="group inline-flex items-baseline text-[0.8125rem]/6 font-medium text-gray-400 transition-colors hover:text-sky-300"
+    >
+      <span className="text-white transition-colors group-hover:text-sky-300">
+        SecPal – A guard&apos;s best friend
+      </span>
+    </Link>
   )
 }
