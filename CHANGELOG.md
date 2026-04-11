@@ -25,12 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - local repository guardrails: `scripts/check-conflict-markers.sh`, `scripts/check-domains.sh`, and `scripts/preflight.sh`
 - `scripts/generate-csp.mjs`: build-time CSP generator that derives the required `script-src` hashes from exported HTML and produces a deployable nginx snippet
 
-### Fixed
-
-- `WhyItMatters` (`src/components/WhyItMatters.tsx`): replaced `<p>` wrapper with `<div>` to accept block-level children without producing invalid HTML
-- `Label` (`src/components/Label.tsx`): extracted `NEUTRAL_KIND_CLASS` constant to eliminate eight identical class string repetitions
-- `CHANGELOG.md`: removed blank-line artifacts within `### Added` and `### Changed` sections left by the duplicate-section merge in #28
-
 ### Changed
 
 - sharpened hero entry copy in `src/app/page.mdx`: headline → "Building SecPal in public", intro split into two shorter paragraphs with "We build in the open.", list simplified to bare app identifiers, section title → "What's in progress", list items trimmed of trailing descriptors
@@ -44,3 +38,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - linting now uses ESLint 9 flat config with a dedicated TypeScript check in CI and local preflight
 - feed and metadata generation now default safely to `https://changelog.secpal.app` when `NEXT_PUBLIC_SITE_URL` is unset
 - local preflight now fails when the tracked nginx CSP snippet no longer matches the current exported HTML
+
+### Fixed
+
+- `WhyItMatters` (`src/components/WhyItMatters.tsx`): replaced `<p>` wrapper with `<div>` to accept block-level children without producing invalid HTML
+- `Label` (`src/components/Label.tsx`): extracted `NEUTRAL_KIND_CLASS` constant to eliminate eight identical class string repetitions
+- `CHANGELOG.md`: removed blank-line artifacts within `### Added` and `### Changed` sections left by the duplicate-section merge in #28
