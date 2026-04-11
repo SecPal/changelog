@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 SecPal
+// SPDX-FileCopyrightText: Tailwind Labs Inc.
+// SPDX-License-Identifier: AGPL-3.0-or-later AND LicenseRef-TailwindPlus
+
 'use client'
 
 import { useEffect, useRef, useState } from 'react'

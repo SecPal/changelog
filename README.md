@@ -72,8 +72,9 @@ npm run preflight
 
 ## License
 
-- SecPal source code: [AGPL-3.0-or-later](LICENSES/AGPL-3.0-or-later.txt)
-- Tailwind Plus Commit template: [LicenseRef-TailwindPlus](LICENSES/LicenseRef-TailwindPlus.txt)
+- Original SecPal source code: [AGPL-3.0-or-later](LICENSES/AGPL-3.0-or-later.txt)
+- Files adapted from the Tailwind Plus Commit template: [AGPL-3.0-or-later](LICENSES/AGPL-3.0-or-later.txt) and [LicenseRef-TailwindPlus](LICENSES/LicenseRef-TailwindPlus.txt)
+- Mona Sans webfont asset: [OFL-1.1](LICENSES/OFL-1.1.txt)
 - Configuration and governance files: [CC0-1.0](LICENSES/CC0-1.0.txt)
 
 See [REUSE.toml](REUSE.toml) for the full license mapping per file.

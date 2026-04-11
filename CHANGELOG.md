@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- narrowed the Tailwind Plus REUSE attribution so only genuinely Commit-template-derived changelog source files carry `LicenseRef-TailwindPlus`, while original SecPal source files now declare plain AGPL directly in their own SPDX headers
 - replaced the generic changelog brand glyphs with the canonical SecPal logo in the header, reused the canonical `SecPal – A guard's best friend` tagline in the footer, kept the dark brand asset for the always-dark intro sidebar in light mode, switched the `secpal.app` link treatment to the canonical monochrome SecPal logo derived from the frontend brand assets, and added light/dark theme-aware browser icons
 - refreshed `package-lock.json` with `npm audit fix --package-lock-only`, clearing the remaining transitive `npm audit` findings and aligning the lockfile package name with `secpal-changelog`
 - switched Next.js build output from `standalone` to `export` — static files in `out/`, no Node.js server process required
