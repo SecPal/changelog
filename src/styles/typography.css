@@ -61,7 +61,8 @@
     font-family: var(--font-display);
     color: var(--typography-headings);
     font-weight: var(--font-weight-semibold);
-    font-size: var(--text-xl);
+    font-size: var(--text-2xl);
+    letter-spacing: -0.01em;
     line-height: theme(lineHeight.8);
   }
 
@@ -254,7 +255,11 @@
     margin-top: theme(margin.6);
   }
 
-  :is(h2, h3, h4, blockquote, pre, table) {
+  h2 {
+    margin-top: theme(margin.10);
+  }
+
+  :is(h3, h4, blockquote, pre, table) {
     margin-top: theme(margin.8);
   }
 
@@ -263,7 +268,7 @@
   }
 
   li {
-    margin-top: theme(margin.4);
+    margin-top: theme(margin.3);
   }
 
   li> :is(p, ol, ul) {

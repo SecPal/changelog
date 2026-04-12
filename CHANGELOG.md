@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Improved
+
+- visual polish pass: h2 release titles enlarged to `text-2xl` with tight letter-spacing for clearer hierarchy; h2 top spacing increased to `margin.10`; list item gap tightened to `margin.3`; inter-article spacing reduced from `space-y-32` to `space-y-28` on desktop; article header bottom margin narrowed from `mb-10` to `mb-8`; `WhyItMatters` callout border opacity and left padding slightly increased for better presence
+
 ### Added
 
 - `Label` and `Labels` components (`src/components/Label.tsx`): lightweight per-entry taxonomy badges with kinds `added | improved | fixed | changed | android | api | web | auth | security | breaking`; neutrals share one style, `security` gets an amber tint, `breaking` a red tint — registered globally in `mdx.tsx` so MDX files need no explicit import
