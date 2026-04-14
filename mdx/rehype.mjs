@@ -27,7 +27,13 @@ async function highlightCode(code, language) {
 
   highlighterPromise ??= shiki.getHighlighter({ theme: 'css-variables' })
 
-  let highlighter = await highlighterPromise
+  let highlighter
+  try {
+    highlighter = await highlighterPromise
+  } catch (error) {
+    highlighterPromise = undefined
+    throw error
+  }
   let tokens = highlighter.codeToThemedTokens(code, language)
 
   return shiki.renderToHtml(tokens, {
@@ -45,7 +51,12 @@ function rehypeShiki() {
 
     visit(tree, 'element', (node, _nodeIndex, parentNode) => {
       if (node.tagName === 'code' && parentNode?.tagName === 'pre') {
-        let language = node.properties.className?.[0]?.replace(/^language-/, '')
+        let rawClassName = node.properties.className?.[0]
+        let languageMatch =
+          typeof rawClassName === 'string'
+            ? rawClassName.match(/^language-([\w-]+)$/)
+            : null
+        let language = languageMatch?.[1]
         let code = node.children[0]?.value
 
         if (!language || typeof code !== 'string') {
@@ -83,6 +94,11 @@ export const rehypePlugins = [
       transform: (article) => {
         article.children.splice(0, 1)
         let heading = article.children.find((n) => n.tagName === 'h2')
+
+        if (!heading) {
+          return article
+        }
+
         article.properties = { ...heading.properties, title: toString(heading) }
         heading.properties = {}
         return article
