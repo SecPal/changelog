@@ -6,7 +6,6 @@
 
 import { useEffect, useId, useRef } from 'react'
 import clsx from 'clsx'
-import { type TimelineSegment, animate, timeline } from 'motion'
 
 type Star = [x: number, y: number, dim?: boolean, blur?: boolean]
 
@@ -86,29 +85,36 @@ function Star({
       return
     }
 
-    let delay = Math.random() * 2
+    let delay = Math.random() * 2000
 
-    let animations = [
-      animate(groupRef.current, { opacity: 1 }, { duration: 4, delay }),
-      animate(
-        ref.current,
+    let groupAnimation = groupRef.current.animate(
+      [{ opacity: 0 }, { opacity: 1 }],
+      { delay, duration: 4000, fill: 'forwards' },
+    )
+
+    let starAnimation = ref.current.animate(
+      [
         {
-          opacity: dim ? [0.2, 0.5] : [1, 0.6],
-          scale: dim ? [1, 1.2] : [1.2, 1],
+          opacity: dim ? 0.2 : 1,
+          transform: `scale(${dim ? 1 : 1.2})`,
         },
         {
-          delay,
-          duration: Math.random() * 2 + 2,
-          direction: 'alternate',
-          repeat: Infinity,
+          opacity: dim ? 0.5 : 0.6,
+          transform: `scale(${dim ? 1.2 : 1})`,
         },
-      ),
-    ]
+      ],
+      {
+        delay,
+        duration: (Math.random() * 2 + 2) * 1000,
+        direction: 'alternate',
+        fill: 'both',
+        iterations: Infinity,
+      },
+    )
 
     return () => {
-      for (let animation of animations) {
-        animation.cancel()
-      }
+      groupAnimation.cancel()
+      starAnimation.cancel()
     }
   }, [dim])
 
@@ -149,26 +155,39 @@ function Constellation({
       return
     }
 
-    let sequence: Array<TimelineSegment> = [
-      [
-        ref.current,
-        { strokeDashoffset: 0, visibility: 'visible' },
-        { duration: 5, delay: Math.random() * 3 + 2 },
-      ],
-    ]
+    let path = ref.current
+    let drawAnimation: Animation | null = null
+    let fillAnimation: Animation | null = null
+    let startTimeout = window.setTimeout(() => {
+      path.style.visibility = 'visible'
 
-    if (isFilled) {
-      sequence.push([
-        ref.current,
-        { fill: 'rgb(255 255 255 / 0.02)' },
-        { duration: 1 },
-      ])
-    }
+      drawAnimation = path.animate(
+        [{ strokeDashoffset: '1' }, { strokeDashoffset: '0' }],
+        { duration: 5000, fill: 'forwards' },
+      )
 
-    let animation = timeline(sequence)
+      if (!isFilled) {
+        return
+      }
+
+      drawAnimation.finished
+        .then(() => {
+          if (!path.isConnected) {
+            return
+          }
+
+          fillAnimation = path.animate(
+            [{ fill: 'transparent' }, { fill: 'rgb(255 255 255 / 0.02)' }],
+            { duration: 1000, fill: 'forwards' },
+          )
+        })
+        .catch(() => {})
+    }, (Math.random() * 3 + 2) * 1000)
 
     return () => {
-      animation.cancel()
+      window.clearTimeout(startTimeout)
+      drawAnimation?.cancel()
+      fillAnimation?.cancel()
     }
   }, [isFilled])
 
