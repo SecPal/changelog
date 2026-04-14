@@ -27,7 +27,7 @@
     "@types/react-dom": "19.2.3",
     "cheerio": "^1.2.0",
     "clsx": "^2.1.1",
-    "feed": "^5.1.0",
+    "feed": "^5.2.0",
     "mdast-util-to-string": "^4.0.0",
     "mdx-annotations": "^0.1.4",
     "motion": "^10.18.0",
