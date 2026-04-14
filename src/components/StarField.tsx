@@ -158,31 +158,34 @@ function Constellation({
     let path = ref.current
     let drawAnimation: Animation | null = null
     let fillAnimation: Animation | null = null
-    let startTimeout = window.setTimeout(() => {
-      path.style.visibility = 'visible'
+    let startTimeout = window.setTimeout(
+      () => {
+        path.style.visibility = 'visible'
 
-      drawAnimation = path.animate(
-        [{ strokeDashoffset: '1' }, { strokeDashoffset: '0' }],
-        { duration: 5000, fill: 'forwards' },
-      )
+        drawAnimation = path.animate(
+          [{ strokeDashoffset: '1' }, { strokeDashoffset: '0' }],
+          { duration: 5000, fill: 'forwards' },
+        )
 
-      if (!isFilled) {
-        return
-      }
+        if (!isFilled) {
+          return
+        }
 
-      drawAnimation.finished
-        .then(() => {
-          if (!path.isConnected) {
-            return
-          }
+        drawAnimation.finished
+          .then(() => {
+            if (!path.isConnected) {
+              return
+            }
 
-          fillAnimation = path.animate(
-            [{ fill: 'transparent' }, { fill: 'rgb(255 255 255 / 0.02)' }],
-            { duration: 1000, fill: 'forwards' },
-          )
-        })
-        .catch(() => {})
-    }, (Math.random() * 3 + 2) * 1000)
+            fillAnimation = path.animate(
+              [{ fill: 'transparent' }, { fill: 'rgb(255 255 255 / 0.02)' }],
+              { duration: 1000, fill: 'forwards' },
+            )
+          })
+          .catch(() => {})
+      },
+      (Math.random() * 3 + 2) * 1000,
+    )
 
     return () => {
       window.clearTimeout(startTimeout)
