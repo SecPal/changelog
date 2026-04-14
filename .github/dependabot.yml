@@ -21,6 +21,8 @@ updates:
       - 'npm'
       - 'dependabot'
     ignore:
+      # Temporary: suppress major ESLint bumps until Next.js supports ESLint 10+.
+      # Remove this block once that upgrade is complete (tracked in #39).
       - dependency-name: 'eslint'
         update-types:
           - 'version-update:semver-major'
