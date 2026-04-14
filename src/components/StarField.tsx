@@ -207,8 +207,8 @@ function Constellation({
         d={`M ${points.join('L')}`}
         className="invisible"
       />
-      {uniquePoints.map((point, pointIndex) => (
-        <Star key={pointIndex} point={point} blurId={blurId} />
+      {uniquePoints.map((point) => (
+        <Star key={point.join(':')} point={point} blurId={blurId} />
       ))}
     </>
   )
@@ -232,15 +232,15 @@ export function StarField({ className }: { className?: string }) {
           <feGaussianBlur in="SourceGraphic" stdDeviation=".5" />
         </filter>
       </defs>
-      {constellations.map((points, constellationIndex) => (
+      {constellations.map((points) => (
         <Constellation
-          key={constellationIndex}
+          key={points.map((point) => point.join(':')).join('|')}
           points={points}
           blurId={blurId}
         />
       ))}
-      {stars.map((point, pointIndex) => (
-        <Star key={pointIndex} point={point} blurId={blurId} />
+      {stars.map((point) => (
+        <Star key={point.join(':')} point={point} blurId={blurId} />
       ))}
     </svg>
   )
