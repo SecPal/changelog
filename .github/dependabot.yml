@@ -1,3 +1,4 @@
+---
 # SPDX-FileCopyrightText: 2026 SecPal
 # SPDX-License-Identifier: CC0-1.0
 
@@ -19,6 +20,12 @@ updates:
       - 'dependencies'
       - 'npm'
       - 'dependabot'
+    ignore:
+      # Temporary: suppress major ESLint bumps until Next.js supports ESLint 10+.
+      # Remove this block once that upgrade is complete (tracked in #39).
+      - dependency-name: 'eslint'
+        update-types:
+          - 'version-update:semver-major'
     rebase-strategy: 'auto'
     target-branch: 'main'
     pull-request-branch-name:
