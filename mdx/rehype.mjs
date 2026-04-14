@@ -96,7 +96,9 @@ export const rehypePlugins = [
         let heading = article.children.find((n) => n.tagName === 'h2')
 
         if (!heading) {
-          return article
+          throw new Error(
+            'rehype: article section is missing an h2 heading; every changelog entry requires ## Title {{ date: "...", id: "..." }}',
+          )
         }
 
         article.properties = { ...heading.properties, title: toString(heading) }
