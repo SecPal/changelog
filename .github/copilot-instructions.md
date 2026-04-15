@@ -64,6 +64,13 @@ At minimum verify:
 - the local 4-pass review was completed, including DRY, KISS, YAGNI, SOLID, quality-first, and issue-management checks
 - no bypass was used
 
+## AI Findings Triage
+
+- Treat AI findings and AI-generated fix PRs as hints, not proof.
+- Before merge, prove the defect with a failing test, a reproducible defect, or a stated invariant together with an explanation of how the current code violates it.
+- Green CI alone is not enough for AI-generated changes, especially for test, lifecycle, shell, regex, or refactor diffs; review the semantic risk explicitly.
+- Reject AI-generated content or styling cleanups that only look simpler in the diff but weaken HTML validity, static export guarantees, or build-proofed behavior.
+
 ## Repository Conventions
 
 - Stack: Node 22, Next.js 16, Tailwind CSS v4, React 19, MDX, TypeScript strict mode.
