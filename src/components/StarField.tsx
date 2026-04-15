@@ -9,6 +9,12 @@ import clsx from 'clsx'
 
 type Star = [x: number, y: number, dim?: boolean, blur?: boolean]
 
+// These values are intentionally tuned for the decorative background composition:
+// - w-220.25 keeps the field spanning the intended layout area at large breakpoints.
+// - rotate-30 matches the desired diagonal orientation used in the design.
+const STARFIELD_BASE_CLASSNAME =
+  'pointer-events-none absolute w-220.25 origin-top-right rotate-30 overflow-visible opacity-70'
+
 const stars: Array<Star> = [
   [4, 4, true, true],
   [4, 44, true],
@@ -70,7 +76,7 @@ const constellations: Array<Array<Star>> = [
   ],
 ]
 
-function Star({
+function StarPoint({
   blurId,
   point: [cx, cy, dim, blur],
 }: {
@@ -208,7 +214,7 @@ function Constellation({
         className="invisible"
       />
       {uniquePoints.map((point) => (
-        <Star key={point.join(':')} point={point} blurId={blurId} />
+        <StarPoint key={point.join(':')} point={point} blurId={blurId} />
       ))}
     </>
   )
@@ -223,7 +229,7 @@ export function StarField({ className }: { className?: string }) {
       fill="white"
       aria-hidden="true"
       className={clsx(
-        'pointer-events-none absolute w-220.25 origin-top-right rotate-30 overflow-visible opacity-70',
+        STARFIELD_BASE_CLASSNAME,
         className,
       )}
     >
@@ -240,7 +246,7 @@ export function StarField({ className }: { className?: string }) {
         />
       ))}
       {stars.map((point) => (
-        <Star key={point.join(':')} point={point} blurId={blurId} />
+        <StarPoint key={point.join(':')} point={point} blurId={blurId} />
       ))}
     </svg>
   )
