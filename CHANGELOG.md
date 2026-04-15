@@ -34,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Dependabot npm updates now ignore unsupported major `eslint` bumps until the Next.js lint stack supports ESLint 10+
-- strengthened repo-local Copilot governance for AI findings: changelog-site work now requires proof of defect before merging AI-generated fix PRs and treats green CI alone as insufficient evidence for content, markup, or static-export refactors
+- Strengthened repo-local Copilot governance for AI findings: changelog-site work now requires proof of defect before merging AI-generated fix PRs and treats green CI alone as insufficient evidence for content, markup, or static export refactors
 
 - intro quick link in `src/components/Intro.tsx` now keeps the SecPal logo mark but points to `https://secpal.app/roadmap` with the label `Roadmap` instead of `secpal.app`
 - sharpened hero entry copy in `src/app/page.mdx`: headline → "Building SecPal in public", intro split into two shorter paragraphs with "We build in the open.", list simplified to bare app identifiers, section title → "What's in progress", list items trimmed of trailing descriptors
