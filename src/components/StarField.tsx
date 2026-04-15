@@ -228,10 +228,7 @@ export function StarField({ className }: { className?: string }) {
       viewBox="0 0 881 211"
       fill="white"
       aria-hidden="true"
-      className={clsx(
-        STARFIELD_BASE_CLASSNAME,
-        className,
-      )}
+      className={clsx(STARFIELD_BASE_CLASSNAME, className)}
     >
       <defs>
         <filter id={blurId}>
