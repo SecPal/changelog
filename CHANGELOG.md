@@ -51,7 +51,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - `mdx/rehype.mjs`: reset cached Shiki highlighter promise on initialization failure, validate `language-*` code block class names before highlighting, and guard article heading extraction when no `h2` is present
+- `nginx/changelog-csp.conf`: split the long CSP definition into composable nginx variables to improve readability and auditability without changing policy content
 - `src/components/StarField.tsx`: replaced index-based React keys with stable coordinate-derived keys for constellation and star rendering
+- `src/components/StarField.tsx`: renamed the star point renderer to `StarPoint` to avoid type-name ambiguity and extracted a named constant for the tuned starfield base class values
 - `WhyItMatters` (`src/components/WhyItMatters.tsx`): replaced `<p>` wrapper with `<div>` to accept block-level children without producing invalid HTML
 - `Label` (`src/components/Label.tsx`): extracted `NEUTRAL_KIND_CLASS` constant to eliminate eight identical class string repetitions
 - `CHANGELOG.md`: removed blank-line artifacts within `### Added` and `### Changed` sections left by the duplicate-section merge in #28
