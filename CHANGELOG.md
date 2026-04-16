@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- tracked `.preflight-exclude` so shared PR-size checks ignore changelog-specific generated churn in `package-lock.json` and `LICENSES/*.txt`
+
 ### Improved
 
 - dependency-upgrade resilience: `StarField` no longer depends on `motion` timeline APIs removed by newer majors, and MDX syntax highlighting now supports both legacy and modern `shiki` export shapes
