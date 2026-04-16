@@ -13,14 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Improved
-
-- dependency-upgrade resilience: `StarField` no longer depends on `motion` timeline APIs removed by newer majors, and MDX syntax highlighting now supports both legacy and modern `shiki` export shapes
-
-- visual polish pass: h2 release titles enlarged to `text-2xl` with tight letter-spacing for clearer hierarchy; h2 top spacing increased to `margin.10`; list item gap tightened to `margin.3`; inter-article spacing reduced from `space-y-32` to `space-y-28` on desktop; article header bottom margin narrowed from `mb-10` to `mb-8`; `WhyItMatters` callout border opacity and left padding slightly increased for better presence
-
 ### Added
 
+- tracked `.preflight-exclude` so shared PR-size checks ignore changelog-specific generated churn in `package-lock.json` and `LICENSES/*.txt`
 - `Label` and `Labels` components (`src/components/Label.tsx`): lightweight per-entry taxonomy badges with kinds `added | improved | fixed | changed | android | api | web | auth | security | breaking`; neutrals share one style, `security` gets an amber tint, `breaking` a red tint — registered globally in `mdx.tsx` so MDX files need no explicit import
 - `WhyItMatters` component (`src/components/WhyItMatters.tsx`): optional callout line for significant entries; renders as a subtle left-border callout block with "Why it matters:" prefix — registered globally in `mdx.tsx`
 - demonstrative usage of both components in `src/app/page.mdx`: scope labels on the hero entry, `WhyItMatters` closing the in-progress section
@@ -30,6 +25,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `scripts/generate-feed.mjs`: post-build script that reads `out/index.html` and generates `out/feed.xml`
 - local repository guardrails: `scripts/check-conflict-markers.sh`, `scripts/check-domains.sh`, and `scripts/preflight.sh`
 - `scripts/generate-csp.mjs`: build-time CSP generator that derives the required `script-src` hashes from exported HTML and produces a deployable nginx snippet
+
+### Improved
+
+- dependency-upgrade resilience: `StarField` no longer depends on `motion` timeline APIs removed by newer majors, and MDX syntax highlighting now supports both legacy and modern `shiki` export shapes
+
+- visual polish pass: h2 release titles enlarged to `text-2xl` with tight letter-spacing for clearer hierarchy; h2 top spacing increased to `margin.10`; list item gap tightened to `margin.3`; inter-article spacing reduced from `space-y-32` to `space-y-28` on desktop; article header bottom margin narrowed from `mb-10` to `mb-8`; `WhyItMatters` callout border opacity and left padding slightly increased for better presence
 
 ### Changed
 
