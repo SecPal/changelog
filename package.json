@@ -43,7 +43,7 @@
     "remark-rehype-wrap": "^0.0.5",
     "shiki": "^4.0.2",
     "tailwindcss": "^4.2.2",
-    "typescript": "^6.0.2",
+    "typescript": "^6.0.3",
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
