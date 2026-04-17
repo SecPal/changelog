@@ -26,6 +26,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - local repository guardrails: `scripts/check-conflict-markers.sh`, `scripts/check-domains.sh`, and `scripts/preflight.sh`
 - `scripts/generate-csp.mjs`: build-time CSP generator that derives the required `script-src` hashes from exported HTML and produces a deployable nginx snippet
 
+### Changed
+
+- wired the central Copilot-instructions validator into `quality.yml` so changelog pull requests now fail automatically when known MDX, markup, or static-export AI-risk guardrails are missing from the runtime baseline
+
 ### Improved
 
 - dependency-upgrade resilience: `StarField` no longer depends on `motion` timeline APIs removed by newer majors, and MDX syntax highlighting now supports both legacy and modern `shiki` export shapes
