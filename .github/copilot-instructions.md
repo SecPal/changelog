@@ -70,6 +70,7 @@ At minimum verify:
 - Before merge, prove the defect with a failing test, a reproducible defect, or a stated invariant together with an explanation of how the current code violates it.
 - Green CI alone is not enough for AI-generated changes, especially for test, lifecycle, shell, regex, or refactor diffs; review the semantic risk explicitly.
 - Reject AI-generated content or styling cleanups that only look simpler in the diff but weaken HTML validity, static export guarantees, or build-proofed behavior.
+- Reject AI-generated MDX, markup, label, or feed refactors that do not prove the exported page, metadata, static build output, and feed behavior remain equivalent after the change.
 
 ## Repository Conventions
 
