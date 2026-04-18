@@ -30,7 +30,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Dependency-upgrade resilience: `StarField` no longer depends on `motion` timeline APIs removed by newer majors, and MDX syntax highlighting now supports both legacy and modern `shiki` export shapes
 
-- Visual polish pass: h2 release titles enlarged to `text-2xl` with tight letter-spacing for clearer hierarchy; h2 top spacing increased to `margin.10`; list item gap tightened to `margin.3`; inter-article spacing reduced from `space-y-32` to `space-y-28` on desktop; article header bottom margin narrowed from `mb-10` to `mb-8`; `WhyItMatters` callout border opacity and left padding slightly increased for better presence
+- Visual polish pass: h2 release titles enlarged to `text-2xl` with tight letter-spacing for clearer hierarchy
+- Visual polish pass: h2 top spacing increased to `margin.10`
+- Visual polish pass: list item gap tightened to `margin.3`
+- Visual polish pass: inter-article spacing reduced from `space-y-32` to `space-y-28` on desktop
+- Visual polish pass: article header bottom margin narrowed from `mb-10` to `mb-8`
+- Visual polish pass: `WhyItMatters` callout border opacity slightly increased for better presence
+- Visual polish pass: `WhyItMatters` callout left padding slightly increased for better presence
 
 ### Changed
 
