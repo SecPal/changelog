@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- clarified the repo-local under-`1.x` policy in Copilot governance so changelog work explicitly prefers removing obsolete compatibility shims over carrying them forward without a proven live caller
 - wired the central Copilot-instructions validator into `quality.yml` so changelog pull requests now fail automatically when known MDX, markup, or static-export AI-risk guardrails are missing from the runtime baseline
 - Dependabot npm updates now ignore unsupported major `eslint` bumps until the Next.js lint stack supports ESLint 10+
 - Strengthened repo-local Copilot governance for AI findings: changelog-site work now requires proof of defect before merging AI-generated fix PRs and treats green CI alone as insufficient evidence for content, markup, or static export refactors
