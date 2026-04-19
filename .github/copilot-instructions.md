@@ -71,7 +71,7 @@ At minimum verify:
 - Green CI alone is not enough for AI-generated changes, especially for test, lifecycle, shell, regex, or refactor diffs; review the semantic risk explicitly.
 - Reject AI-generated content or styling cleanups that only look simpler in the diff but weaken HTML validity, static export guarantees, or build-proofed behavior.
 - Reject AI-generated MDX, markup, label, or feed refactors that do not prove the exported page, metadata, static build output, and feed behavior remain equivalent after the change.
-- Reject AI-generated compatibility keep-alives that preserve obsolete content contracts, metadata aliases, or storage/input shims without a proven live caller. Because the SecPal project is still under `1.x`, prefer removing unnecessary compatibility paths over carrying them forward when they add noise, ambiguity, or maintenance cost.
+- Reject AI-generated compatibility keep-alives that preserve obsolete content contracts, metadata aliases, or storage/input shims without a proven live caller. Because the SecPal project is still pre-`1.0.0`, prefer removing unnecessary compatibility paths over carrying them forward when they add noise, ambiguity, or maintenance cost.
 
 ## Repository Conventions
 
@@ -86,4 +86,4 @@ At minimum verify:
 
 - Do not add dependencies or create documentation files unless the task requires them.
 - The MVP has no search, no pagination, and no per-entry permalink pages — all content is a single page. Keep it that way unless a specific issue requires otherwise.
-- Because the SecPal project is still under `1.x`, breaking changes are acceptable when they remove insecure or obsolete compatibility layers. When taking that route, update validation and `CHANGELOG.md` in the same change set instead of keeping a legacy path alive by default.
+- Because the SecPal project is still pre-`1.0.0`, breaking changes are acceptable when they remove insecure or obsolete compatibility layers. When taking that route, update the relevant formatting, lint, and build validation and `CHANGELOG.md` in the same change set instead of keeping a legacy path alive by default.
